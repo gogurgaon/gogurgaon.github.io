@@ -14,7 +14,9 @@ body {
     margin: 0 auto;
     padding-left: 1em;
     padding-right: 1em;
-    background-image: url('https://golang.org/doc/gopher/frontpage.png');
+    background-image: url('../images/gopher.jpg');
+    background-repeat: repeat-x;
+    background-position: center; 
 }
 
 .intro, .social-links, .announcement {
