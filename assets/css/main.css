@@ -1,0 +1,278 @@
+/* Global
+* ============================================================================ */
+/* Layout
+* ------------------------------------- */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-image: url('https://golang.org/doc/gopher/frontpage.png');
+}
+
+.intro, .social-links, .announcement {
+    text-align: center;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 550px;
+  margin: 1rem;
+  position: relative;
+  width: 50%;
+  margin: 5% 0px 0px 25%;
+
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+/* Typography
+* ------------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+li {
+    margin-bottom: 0.5em;
+}
+
+/* UI/Forms
+ ------------------------------------- */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+    color: #376fa0;
+}
+a:hover, a:active {
+    border-bottom: 1px solid;
+}
+
+/* Homepage
+* ============================================================================ */
+.page-home .intro {
+    margin-top: 4em;
+    margin-top: 20vh;
+    font-size: 1.5em;
+}
+
+.page-home .social-links ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  list-style: none;
+  padding-left: 0px;
+}
+.page-home .social-links li a {
+  padding: 5px 10px;
+  background: #fff;
+  cursor: pointer;
+  display: inline-block;
+}
+.page-home .social-links li:hover a {
+  color: #fff;
+  border: None;
+  background: #376fa0;
+}
+.page-home .social-links ul li {
+  display: inline-block;
+  margin-right: -4px;
+  margin-bottom: 0;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.page-home .social-links ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+.page-home .social-links ul li ul li a{
+  background: #376fa0;
+  display: block;
+  width: 150px;
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+.page-home .social-links ul li ul li small {
+  font-size: 56%;
+}
+.page-home .social-links ul li ul li:hover a { background: #407eb5; }
+.page-home .social-links ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-home .section--next_event {
+  margin-top: 3.5em;
+  text-align: center;
+  transition: all 0.5s ease;
+  /*opacity: 0;*/
+}
+.page-home .section--next_event .btn-cta {
+  display: inline-block;
+  background-color: #11fac2;
+  padding: 10px;
+}
+.page-home .section--next_event a {
+  display: inline-block;
+  padding: 10px;
+  background-color: #fdf7d6;
+  border-bottom: none;
+}
+.page-home .section--next_event a:hover {
+  border-bottom: none;
+  background-color: #e4dfc0;
+  color: #111;
+}
+
+.page-home .announcement {
+    font-size: 1.2em;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-top: 1em;
+    background: #2ECC71;
+    border-radius: 45px;
+}
+
+.page-home .announcement a {
+  display: inline-block;
+  padding: 10px 6px;
+  border-bottom: none;
+  font-weight: bold;
+}
+.community-partners {
+  margin-top: 3.5em;
+  text-align: center
+}
+.community-partners a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  opacity: 0.7;
+}
+
+/* Blog Post
+* ============================================================================ */
+@keyframes loadingPulse {
+    0% {opacity: 1;}
+    50% {opacity: red; opacity: 0.6; }
+    100% {opacity: 1;}
+}
+@-webkit-keyframes loadingPulse {
+    0% {opacity: 1;}
+    50% {opacity: red; opacity: 0.6; }
+    100% {opacity: 1;}
+}
+.section--blog_posts {
+    padding-top: 1em;
+    text-align: center;
+}
+.section--blog_posts .blog-post__list {
+    padding-left: 0;
+}
+.blog-post__item {
+    list-style: none;
+    padding: 0 1em;
+}
+.blog-post__title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.blog-post__author {
+    display: block;
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    color: #a5a4a4;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+.blog-post__list--loading {
+    animation: loadingPulse 1.5s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+.blog-post__list--loading .blog-post__title {
+    width: 20em;
+    background: #f8f6fd;
+}
+.blog-post__list--loading .blog-post__author {
+    width: 10em;
+    background: #f5f4f4;
+}
+
+@media only screen and (max-width: 736px) {
+    .page-home .social-links li a {
+      padding: 10px 20px;
+    }
+    .page-home .social-links ul li ul {
+      top: 38px;
+    }
+}
+
+/* Code of Conduct
+* ============================================================================ */
+.page-home .intro-coc {
+    margin-top: 10vh;
+    font-size: 1.5em;
+}
+
+.intro-coc{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.intro-coc a{
+  font-size: 0.7em;
+}
+
+.intro-coc h3{
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.intro-coc p{
+  font-size: 0.8em;
+}
+
+.intro-coc li{
+  font-size: 0.8em;
+}
+
+.intro-coc span{
+  font-weight: 600;
+}
